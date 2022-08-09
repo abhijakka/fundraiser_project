@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FundRaiser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'admin/images/icon5.png' %}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Mansalva|Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'user/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'user/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'user/fonts/flaticon/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/aos.css' %}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+      
+      
+      
+      <div class="bg-primary py-3 top-bar shadow d-none d-md-block">
+        <div class="container">
+          <div class="row" >
+            <div class="col-md-6 text-md-left pl-0 ">
+              <a href="#" class="p-3"><span class="icon-twitter"></span></a>
+              <a href="#" class="p-3"><span class="icon-facebook"></span></a>
+            </div>
+            <div class="col-md-6 text-md-right ">
+              
+              <a href="{% url 'admin_login' %}" type="button" class="btn btn-dark ;">Admin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="site-navbar site-navbar-target bg-secondary shadow" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+            
+
+            <div class="site-logo">
+              <a href="{% url 'home2' %}" class="text-white">Fundraiser</a>
+            </div>
+
+
+            <nav class="site-navigation text-left ml-auto " role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                <li class="active"><a href="{% url 'home2' %}" class="nav-link">Home</a></li>
+                <li ><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+                <li><a href="{% url 'health' %}" class="nav-link">Health</a></li>
+                <li><a href="{% url 'livehood' %}" class="nav-link">Livehood</a></li>
+                <li><a href="{% url 'education' %}" class="nav-link">Education</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                <a href="{% url 'signup' %}" type="button" class="btn btn-primary btn-lg">Raise Funds</a>
+              </ul>
+            </nav>
+
+
+            <div class="ml-auto toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-white"><span class="icon-menu h3 text-white"></span></a></div>
+
+            
+
+          </div>
+        </div>
+
+      </header>
+
+      <div class="site-section bg-image overlay-warning" style="background-image: url('static/user/images/09.jpg');">
+        <div class="container ">
+          <div class="row " style="justify-content: center;">
+            
+            <div class="col-md-6" >
+              <div class="bg-white h-100 p-4 shadow">
+                <h3 class="mb-4 text-bold">Login</h3>
+                <form action="#" method="post"  onsubmit ="return verifyPassword()">
+                  {% csrf_token %}
+                 
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+                    <span id = "messages" style="color:red"> </span>
+                  </div>
+                  <div class="form-group">  
+                    <input type="password" class="form-control" placeholder="Password"  id="pswd" name="password">
+                    <span id = "message" style="color:red"> </span>
+                </div>
+                      <div class="form-group d-flex">
+                        <button type="submit" class="btn btn-primary" style="width: 100px;margin:5px" role="button" >login</button>
+                        <a href="signup" class="btn btn-danger"style="width: 100px;margin-left:300px;color:white;margin:5px" role="button"  >Register</a>
+                      </div>
+                    
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="site-section">
+      <div class="container">
+        
+            <div class="d-md-flex cta-20101 align-self-center bg-light p-5">
+              <div class=""><h2 class="text-cursive">Helping the Homeless, Hungry, and Hurtings Children</h2></div>
+              <div class="ml-auto"><a href="{% url 'home2' %}" class="btn btn-primary">Donate Now</a></div>
+            </div>
+        
+      </div>
+    </div>
+    
+    <footer class="site-footer bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-7">
+                <h2 class="footer-heading mb-4">About Us</h2>
+               <p>The pain itself is a lot of pain, it's enhanced. That sort of thing, let him seek for his labors;</p>
+
+
+              </div>
+             <div class="col-md-4 ml-auto">
+                <h2 class="footer-heading mb-4">Features</h2>
+                <ul class="list-unstyled">
+                  <li><a href="{% url 'about' %}">About Us</a></li>
+                  <li><a href="{% url 'health' %}">Health</a></li>
+                  <li><a href="{% url 'livehood' %}">Livehood</a></li>
+                  <li><a href="{% url 'education' %}">Education</a></li>
+                  <li><a href="{% url 'contact'%}">Contact Us</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-4 ml-auto">
+
+            <div class="mb-5">
+              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+              <form action="#" method="post" class="footer-suscribe-form">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+            </div>
+
+
+            <h2 class="footer-heading mb-4">Follow Us</h2>
+            <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </form>
+          </div>
+        </div>
+       
+      </div>
+    </footer>
+
+    </div>
+
+    <script src="{% static 'user/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'user/js/popper.min.js' %}"></script>
+    <script src="{% static 'user/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'user/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'user/js/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'user/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'user/js/aos.js' %}"></script>
+
+    <script src="{% static 'user/js/main.js' %}"></script>
+    <script type="text/javascript">
+      function verifyPassword() {
+      
+      
+      
+        var pw = document.getElementById("pswd").value;
+        var Gmail = document.getElementById("email").value;
+       
+        //check empty password field
+        if(pw.length == "") {
+           document.getElementById("message").innerHTML = "**Fill the password please!";
+           return false;
+        }
+       
+       //minimum password length validation
+        if(pw.length < 8) {
+           document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+           return false;
+        }
+      
+      //maximum length of password validation
+        if(pw.length > 15) {
+           document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+           return false;
+        
+      }
+      
+      if(Gmail== ""){
+        document.getElementById("messages").innerHTML = "**Fill the email please!"; 
+        
+      
+        return false;
+       } 
+      
+      if(!Gmail.value.match(mailformat)){
+      
+        document.getElementById("messages").innerHTML = "**please enter correct email!"; 
+      
+        
+      
+        return false;
+      } 
+      
+      
+       return true;
+      }
+      
+      </script> 
+      
+    <script>
+
+        {% for m in messages %}
+      
+        swal({
+          
+          text: "{{m}}",
+          icon: "success",
+          button: "ok",
+        });
+          
+        {% endfor %}
+      
+     </script>
+      
+
+  </body>
+
+</html>
